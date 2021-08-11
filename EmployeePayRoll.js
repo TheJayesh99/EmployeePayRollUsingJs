@@ -57,12 +57,11 @@ class EmployeePayrollData{
     
     get startDate(){return this._startDate}
     set startDate(startDate){
-        if (startDate <= new Date() ) {
-            this._startDate = startDate
-        }
-        else{
-            throw "date  is incorrect"
-        }
+        if (new Date(startDate) <= new Date()) {
+            this._startDate = new Date(startDate);
+          } else {
+            throw "date  is incorrect";
+          }
     }
 
 
